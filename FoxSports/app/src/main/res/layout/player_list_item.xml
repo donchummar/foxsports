@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="test.donfoxsports.view.activity.PlayerListActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="test.foxsports.foxsdk.model.TopPlayer" />
+
+        <variable
+            name="topPlayer"
+            type="TopPlayer" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#abf291"
+        android:clickable="true"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            app:imageUrl="@{topPlayer.id}" />
+
+        <TextView
+            android:id="@+id/nameJumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/profilePic"
+            android:text='@{topPlayer.shortName +"  "+ topPlayer.jumperNumber}' />
+
+
+        <TextView
+            android:id="@+id/positionStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameJumber"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/profilePic"
+            android:text='@{topPlayer.position +"  "+ topPlayer.statValue}' />
+
+    </RelativeLayout>
+
+</layout>
+

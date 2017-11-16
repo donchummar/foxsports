@@ -21,9 +21,7 @@ public interface TeamStatsContract {
     }
 
     interface Interactor extends BaseInteractor {
-        /**
-         * Call update order api
-         */
         void getPlayerList(TeamStatsContract.Presenter presenter);
+        void getPlayerStatsDetails(Presenter presenter, long teamId, long playerId);
     }
 }

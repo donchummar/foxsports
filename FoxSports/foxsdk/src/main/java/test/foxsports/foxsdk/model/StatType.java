@@ -3,7 +3,7 @@ package test.foxsports.foxsdk.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Player {
+public class StatType extends Model {
 
     @SerializedName("match_id")
     private String mMatchId;
@@ -45,5 +45,4 @@ public class Player {
     public void setTeamB(TeamB teamB) {
         mTeamB = teamB;
     }
-
 }

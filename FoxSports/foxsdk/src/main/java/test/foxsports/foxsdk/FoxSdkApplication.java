@@ -10,10 +10,15 @@ import android.support.v4.app.AppLaunchChecker;
 
 public abstract class FoxSdkApplication extends Application {
 
-    private static FoxSdkApplication instance;
+    protected static FoxSdkApplication instance;
 
     public static FoxSdkApplication singleton() {
         return instance;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
     }
 
     public Context getApplicationContext() {

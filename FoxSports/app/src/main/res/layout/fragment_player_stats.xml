@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="test.donfoxsports.view.fragment.PlayerStatsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:padding="@dimen/fab_margin"
+            android:layout_height="wrap_content"
+            android:background="#abf291"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:layout_weight="1"
+                android:text="TEAM A" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="16sp"
+                android:text="TEAM B" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/playerListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/heading" />
+
+    </RelativeLayout>
+</layout>

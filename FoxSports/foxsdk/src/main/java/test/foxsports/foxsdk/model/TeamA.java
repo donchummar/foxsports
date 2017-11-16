@@ -1,10 +1,13 @@
 
 package test.foxsports.foxsdk.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class TeamA {
+import test.foxsports.foxsdk.R;
+
+public class TeamA{
 
     @SerializedName("code")
     private String mCode;
@@ -49,12 +52,11 @@ public class TeamA {
         mShortName = shortName;
     }
 
-    public List<TopPlayer> getTopPlayers() {
-        return mTopPlayers;
+    public ArrayList<TopPlayer> getTopPlayers() {
+        return (ArrayList<TopPlayer>) mTopPlayers;
     }
 
     public void setTopPlayers(List<TopPlayer> topPlayers) {
         mTopPlayers = topPlayers;
     }
-
 }

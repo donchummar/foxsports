@@ -13,12 +13,17 @@ public class FoxApp extends FoxSdkApplication {
 
 
     @Override
+    public void onCreate() {
+        instance = this;
+        super.onCreate();
+    }
+
+    @Override
     public Context getApplicationContext() {
         return super.getApplicationContext();
     }
 
-    public static FoxApp singleton()
-    {
+    public static FoxApp singleton() {
         // NOTE: The instance is created by the system.
         return (FoxApp) FoxSdkApplication.singleton();
     }

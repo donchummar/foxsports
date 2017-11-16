@@ -3,7 +3,7 @@ package test.foxsports.foxsdk.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class TopPlayer {
+public class TopPlayer  extends Model{
 
     @SerializedName("full_name")
     private String mFullName;
@@ -17,6 +17,8 @@ public class TopPlayer {
     private String mShortName;
     @SerializedName("stat_value")
     private Long mStatValue;
+
+    private int layoutId;
 
     public String getFullName() {
         return mFullName;

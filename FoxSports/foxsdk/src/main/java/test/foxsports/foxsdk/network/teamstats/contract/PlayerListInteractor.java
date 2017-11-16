@@ -5,7 +5,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import test.foxsports.foxsdk.model.Player;
+import test.foxsports.foxsdk.model.StatType;
+import test.foxsports.foxsdk.model.PlayerDetailStats;
 import test.foxsports.foxsdk.network.NetworkModule;
 import test.foxsports.foxsdk.network.api.FoxApi;
 
@@ -24,14 +25,29 @@ public class PlayerListInteractor implements TeamStatsContract.Interactor {
 
     @Override
     public void getPlayerList(final TeamStatsContract.Presenter presenter) {
-        foxApi.getPlayerList().enqueue(new Callback<List<Player>>() {
+        foxApi.getPlayerList().enqueue(new Callback<List<StatType>>() {
             @Override
-            public void onResponse(Call<List<Player>> call, Response<List<Player>> response) {
+            public void onResponse(Call<List<StatType>> call, Response<List<StatType>> response) {
                 presenter.onSuccessOrder(response);
             }
 
             @Override
-            public void onFailure(Call<List<Player>> call, Throwable t) {
+            public void onFailure(Call<List<StatType>> call, Throwable t) {
+                presenter.onFailedOrderUpdate(call);
+            }
+        });
+    }
+
+    @Override
+    public void getPlayerStatsDetails(final TeamStatsContract.Presenter presenter, long teamId, long playerId) {
+        foxApi.getPlayerDetails(teamId, playerId).enqueue(new Callback<PlayerDetailStats>() {
+            @Override
+            public void onResponse(Call<PlayerDetailStats> call, Response<PlayerDetailStats> response) {
+                presenter.onSuccessOrder(response);
+            }
+
+            @Override
+            public void onFailure(Call<PlayerDetailStats> call, Throwable t) {
                 presenter.onFailedOrderUpdate(call);
             }
         });
